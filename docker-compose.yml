@@ -13,7 +13,8 @@ services:
     volumes:
       - ./plex/database:/config
       - ./plex/transcode:/transcode
-      - ./plex/media:/data
+      #- ./plex/media:/data
+      - /home/jamie/media:/data
   plexpy:
     container_name: plexpy
     image: linuxserver/plexpy
