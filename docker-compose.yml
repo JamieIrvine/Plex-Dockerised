@@ -11,8 +11,8 @@ services:
       - PLEX_GID=1000
     network_mode: host
     volumes:
-      - ./plex/database:/config
-      - ./plex/transcode:/transcode
+      - /home/jamie/media/plex-data/config:/config
+      - /home/jamie/media/plex-data/transcode:/transcode
       #- ./plex/media:/data
       - /home/jamie/media:/data
   plexpy:
