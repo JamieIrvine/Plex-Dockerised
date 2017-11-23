@@ -1,0 +1,25 @@
+version: '2'
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/London
+      - PLEX_CLAIM=<claimToken>
+    network_mode: host
+    volumes:
+      - ./plex/database:/config
+      - ./plex/transcode:/transcode
+      - ./plex/media:/data
+  plexpy:
+    container_name: plexpy
+    image: linuxserver/plexpy
+    restart: unless-stopped
+    ports:
+      - 8181:8181
+    environment:
+      - TZ=Europe/London
+    volumes:
+      - ./plexpy/config:/config
+      - ./plexpy/logs:/logs
