@@ -8,7 +8,7 @@ A docker-compose file to run Plex and PlexPy services.
 docker-compose run -d 
 
 ## Web UIs
-Plex: localhost:32400/web
+Plex: localhost:32400/web  
 PlexPy: localhost:8181
 
 # Stopping 
